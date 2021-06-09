@@ -13,9 +13,9 @@ namespace P8_DiaryEntry
 
             CultureInfo culture = new CultureInfo("es-MX");
 
-            string todayAsStr = today.ToString(culture);
+            string todayAsStr = today.ToString("d/M/yyyy");
 
-            string nombreDocumento = todayAsStr.Substring(0,10);
+            string nombreDocumento = todayAsStr.Replace("/","-");
 
             string opcion = "";
 
@@ -35,11 +35,6 @@ namespace P8_DiaryEntry
                     opcion = "cerrar";
                     Console.WriteLine("\"Cerrando diario...\"");
                 }
-
-                // No se que pasa con la variable de tiempo "todayAsStr", si la utilizo para el nombre con el que se va a guardar 
-                // el atchivo .txt, me sale un error y el programa no se ejecuta correctamente, por lo que nombro el 
-                // archivo directamente con un string para que funcione
-                // No sé si estoy haciendo algo mal
 
                 else
                 {
